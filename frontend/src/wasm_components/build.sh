@@ -1,0 +1,1 @@
+em++ -v sample.cpp -std=c++23 -O3 -o sample.mjs --bind -s ENVIRONMENT="web" -s EXPORT_NAME='createModule' -s USE_ES6_IMPORT_META=0 -s NO_DISABLE_EXCEPTION_CATCHING --no-entry -s MODULARIZE=1 -msimd128 -msse4.2 -sALLOW_MEMORY_GROWTH && mv sample.wasm ../../public

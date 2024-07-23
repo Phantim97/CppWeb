@@ -1,0 +1,59 @@
+# JetBrains IDEs (IntelliJ IDEA, WebStorm, CLion, etc.)
+.idea/
+*.iws
+*.iml
+*.ipr
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# Eclipse
+.project
+.cproject
+.settings/
+.metadata/
+bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Visual Studio Code
+.vscode/
+
+# Xcode
+*.xcworkspace
+*.xcodeproj
+*.xcuserstate
+*.xcuserdata
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# --- Other ---
+/test_output/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+__pycache__/
+coverage/
