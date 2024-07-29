@@ -2,6 +2,7 @@
 #include <crow.h>
 #include <fstream>
 #include <unordered_map>
+#include "htmlgen/html_gen.h"
 
 const std::unordered_map<std::string, std::string> mime_types = {
 		{"html", "text/html"},
@@ -62,11 +63,22 @@ int main()
 				serve_file("../../frontend/dist/index.html", res);
 			});
 
-	// Serve static files
+
+	CROW_ROUTE(app, "/generate")
+			([](const crow::request& req, crow::response& res){
+				std::string path = "../../frontend/dist/generated.html";
+				const Tag full = DIV {H1 {"Test"}, P {"This is a sample"}, BUTTON{ "button", "CLICK HERE"}};
+				html::generate_file(path, full);
+				serve_file(path, res);
+			});
+
+	// Serve static files (Generic Pathing)
 	CROW_ROUTE(app, "/<path>")
 			([](const crow::request& req, crow::response& res, std::string path){
 				serve_file("../../frontend/dist/" + path, res);
 			});
+
+
 
 	app.bindaddr("127.0.0.1").port(18080).multithreaded().run();
 }

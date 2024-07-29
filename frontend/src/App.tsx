@@ -1,5 +1,6 @@
 import './App.css'
 import WasmPuller from "./components/WasmPuller.tsx";
+import GenRouter from "./components/GenRouter.tsx";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <div>
           <WasmPuller />
+          <GenRouter />
       </div>
     </>
   )

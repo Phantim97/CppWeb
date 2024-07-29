@@ -30,7 +30,7 @@ if(NOT asio_POPULATED)
     FetchContent_Populate(asio)
 endif()
 
-add_executable(CrowServer src/main.cpp)
+add_executable(CrowServer src/main.cpp src/htmlgen/html_gen.cpp)
 
 # Include Crow headers
 target_include_directories(CrowServer PRIVATE ${crow_SOURCE_DIR}/include)
