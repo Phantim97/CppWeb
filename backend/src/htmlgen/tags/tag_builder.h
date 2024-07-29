@@ -19,7 +19,7 @@ struct Tag
 	std::vector<Tag> children;
 	std::vector<std::pair<std::string, std::string>> attributes;
 
-	std::string to_string() const
+	[[nodiscard]] std::string to_string() const
 	{
 		std::ostringstream os;
 		os << "<" << name;
