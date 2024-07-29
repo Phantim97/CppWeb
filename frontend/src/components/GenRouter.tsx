@@ -1,15 +1,14 @@
 import React from 'react';
 
-function GenRouter()
+function GenRouter({ href })
 {
-    const handleDownload = () =>
-    {
-        window.location.href = '/generate';
+    const handleDownload = () => {
+        window.location.href = href;
     };
 
     return (
         <div>
-            <button onClick={handleDownload}>Get Generated HTML File</button>
+            <button onClick={handleDownload}>Get: {href}.html</button>
         </div>
     );
 }

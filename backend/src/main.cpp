@@ -63,11 +63,18 @@ int main()
 				serve_file("../../frontend/dist/index.html", res);
 			});
 
-
-	CROW_ROUTE(app, "/generate")
+	CROW_ROUTE(app, "/generate-1")
 			([](const crow::request& req, crow::response& res){
 				std::string path = "../../frontend/dist/generated.html";
 				const Tag full = DIV {H1 {"Test"}, P {"This is a sample"}, BUTTON{ "button", "CLICK HERE"}};
+				html::generate_file(path, full);
+				serve_file(path, res);
+			});
+
+	CROW_ROUTE(app, "/generate-2")
+			([](const crow::request& req, crow::response& res){
+				std::string path = "../../frontend/dist/generated.html";
+				const Tag full = DIV {H1 {"Another Test"}, P {"Also Generated from C++"}, BUTTON{ "button", "CLICK HERE"}};
 				html::generate_file(path, full);
 				serve_file(path, res);
 			});
@@ -77,8 +84,6 @@ int main()
 			([](const crow::request& req, crow::response& res, std::string path){
 				serve_file("../../frontend/dist/" + path, res);
 			});
-
-
 
 	app.bindaddr("127.0.0.1").port(18080).multithreaded().run();
 }

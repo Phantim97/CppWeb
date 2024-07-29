@@ -8,7 +8,8 @@ function App() {
     <>
       <div>
           <WasmPuller />
-          <GenRouter />
+          <GenRouter href="generate-1"/>
+          <GenRouter href="generate-2"/>
       </div>
     </>
   )
