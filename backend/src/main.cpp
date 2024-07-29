@@ -66,7 +66,7 @@ int main()
 	CROW_ROUTE(app, "/generate-1")
 			([](const crow::request& req, crow::response& res){
 				std::string path = "../../frontend/dist/generated1.html";
-				const Tag full = DIV {H1 {"Test"}, P {"This is a sample"}, BUTTON{ "button", "CLICK HERE"}};
+				const Tag full = DIV {H1 {"Test"}, P {"This is a sample"}, BR{}, BUTTON{ "button", "CLICK HERE"}};
 				html::generate_file(path, full);
 				serve_file(path, res);
 			});

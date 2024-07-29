@@ -59,7 +59,7 @@ struct IMG : Tag
 {
 	explicit IMG(const std::string url) : Tag("img", "")
 	{
-		attributes.emplace_back(std::make_pair("src", url));
+		attributes.emplace_back("src", url);
 	}
 };
 
@@ -67,10 +67,26 @@ struct BUTTON : Tag
 {
 	explicit BUTTON(const std::string& button_type, const std::string& button_text) : Tag("button", button_text)
 	{
-		attributes.emplace_back(std::make_pair("type", button_type));
+		attributes.emplace_back("type", button_type);
 	}
 };
 
+struct INPUT : Tag
+{
+	explicit INPUT(const std::string& input_type, const std::string& input_text) : Tag("button", input_text)
+	{
+		attributes.emplace_back("type", input_type);
+	}
+};
 
+struct SPAN : Tag
+{
+	SPAN(std::initializer_list<Tag> children) : Tag("span", children) {}
+};
+
+struct BR : Tag
+{
+	explicit BR() : Tag("br", ""){};
+};
 
 #endif //CPPWEB_TAGS_H
