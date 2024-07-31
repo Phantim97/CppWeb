@@ -7,7 +7,7 @@
 
 namespace html
 {
-	void generate_file(const std::string& file_name, Tag body)
+	void generate_file(const std::string& file_name, const Tag& body)
 	{
 		const std::string boiler_plate_begin = "<!DOCTYPE html>\n<html lang=\"en\">\n"
 		                                       "  <head>\n"

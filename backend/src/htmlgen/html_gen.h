@@ -9,6 +9,6 @@
 
 namespace html
 {
-	void generate_file(const std::string& file_name, Tag body);
+	void generate_file(const std::string& file_name, const Tag& body);
 }
 #endif //CPPWEB_HTML_GEN_H

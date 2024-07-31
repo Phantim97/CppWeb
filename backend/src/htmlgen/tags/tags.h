@@ -89,4 +89,8 @@ struct BR : Tag
 	explicit BR() : Tag("br", ""){};
 };
 
+struct HR : Tag
+{
+	explicit HR() : Tag("hr", ""){};
+};
 #endif //CPPWEB_TAGS_H
